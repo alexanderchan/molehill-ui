@@ -1,0 +1,7 @@
+{
+  "presets": [[
+    "@babel/preset-react",
+    { "runtime": "automatic", "importSource": "@emotion/react" }
+  ], "@babel/preset-typescript"],
+  "plugins": ["@molehill-ui", "@emotion/babel-plugin"]
+}

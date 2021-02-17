@@ -1,0 +1,19 @@
+{
+  "name": "@molehill-ui/babel-plugin",
+  "version": "0.0.0",
+  "description": "Babel plugin to transpile sx prop",
+  "main": "dist/molehill-ui-babel-plugin.cjs.js",
+  "author": "Wes Cole <wesley.cole87@gmail.com>",
+  "license": "MIT",
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.16",
+    "@babel/types": "^7.12.13"
+  }
+}
