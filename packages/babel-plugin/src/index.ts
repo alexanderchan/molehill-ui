@@ -59,8 +59,8 @@ function addVar(cssPropertyValue) {
 
 // Babel plugin
 
-export default function ({ types: t }) {
-  const replaceVars = {
+export function traverseVars({ t }) {
+  const visitor = {
     // translate --short-hand => var(--short-hand) in strings
     StringLiteral(path) {
       path.node.value = addVar(path.node.value)
@@ -101,12 +101,16 @@ export default function ({ types: t }) {
     },
   }
 
+  return visitor
+}
+
+export default function ({ types: t }) {
   return {
     name: '@molehill-ui',
     visitor: {
       JSXAttribute(path) {
         if (attributesToReplace.includes(path.node.name.name)) {
-          path.traverse(replaceVars)
+          path.traverse(traverseVars({ t }))
         }
 
         if (path.node.name.name === 'sx') {

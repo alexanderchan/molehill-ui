@@ -15,5 +15,8 @@
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.16",
     "@babel/types": "^7.12.13"
+  },
+  "devDependencies": {
+    "babel-plugin-macros": "^3.0.1"
   }
 }
