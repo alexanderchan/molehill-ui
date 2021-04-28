@@ -1,0 +1,19 @@
+{
+  "name": "@molehill-ui/hooks",
+  "version": "0.0.0",
+  "description": "React hooks for MoleHill UI",
+  "main": "dist/molehill-ui-hooks.cjs.js",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3"
+  },
+  "preconstruct": {
+    "entrypoints": [
+      "a11y/index.ts"
+    ]
+  }
+}

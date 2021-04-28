@@ -1,0 +1,25 @@
+{
+  "name": "@molehill-ui/storybook",
+  "version": "1.0.0",
+  "description": "Storybook for development",
+  "main": "dist/molehill-ui-storybook.cjs.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@molehill-ui/hooks": "0.0.0",
+    "@storybook/addon-actions": "^6.2.7",
+    "@storybook/addon-essentials": "^6.2.7",
+    "@storybook/addon-links": "^6.2.7",
+    "@storybook/react": "^6.2.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3"
+  }
+}
