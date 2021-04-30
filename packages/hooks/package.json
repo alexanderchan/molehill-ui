@@ -13,7 +13,9 @@
   },
   "preconstruct": {
     "entrypoints": [
-      "a11y/index.ts"
+      "utils/index.ts",
+      "a11y/index.ts",
+      "dialog/index.ts"
     ]
   }
 }

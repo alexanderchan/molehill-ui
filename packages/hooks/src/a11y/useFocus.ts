@@ -1,8 +1,8 @@
 import { FocusEvent } from 'react'
 
-type UseFocusProps<T> = {
-  onFocus?: (event: FocusEvent<T>) => void
-  onBlur?: (event: FocusEvent<T>) => void
+interface UseFocusProps<T> {
+  onFocus?: <T>(event: FocusEvent<T>) => void
+  onBlur?: <T>(event: FocusEvent<T>) => void
 }
 
 export function useFocus<T = HTMLInputElement>({

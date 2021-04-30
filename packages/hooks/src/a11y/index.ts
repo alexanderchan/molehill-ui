@@ -1,11 +1,11 @@
-import { KeyboardEvent, RefObject } from 'react'
+import { KeyboardEvent, RefObject, SyntheticEvent } from 'react'
 
 export * from './useHover'
 export * from './useFocus'
-export * from './useFocusFirst'
-export * from './useFocusContain'
 export * from './useFocusWithin'
 export * from './useTabbableElements'
+export * from './useFocusTrap'
+export * from './useKeyboard'
 
 const focusableElements = [
   'input:not([disabled]):not([type=hidden])',
@@ -88,4 +88,49 @@ export function isNotTabKey(event: KeyboardEvent) {
     event.ctrlKey ||
     event.metaKey
   )
+}
+
+/**
+ * Inspiration from React Spectrum
+ * https://github.com/adobe/react-spectrum/blob/main/packages/%40react-types/shared/src/events.d.ts
+ */
+export type BaseEvent<T extends SyntheticEvent> = T & {
+  /** @deprecated Use continuePropagation. */
+  stopPropagation(): void
+  continuePropagation(): void
+}
+
+export function createEventHandler<T extends SyntheticEvent>(
+  handler: (e: BaseEvent<T>) => void
+): (e: T) => void {
+  if (!handler) {
+    return
+  }
+
+  let shouldStopPropagation = true
+  return (e: T) => {
+    const event: BaseEvent<T> = {
+      ...e,
+      preventDefault() {
+        e.preventDefault()
+      },
+      isDefaultPrevented() {
+        return e.isDefaultPrevented()
+      },
+      stopPropagation() {
+        console.error(
+          'stopPropagation is now the default behavior for events in React Spectrum. You can use continuePropagation() to revert this behavior.'
+        )
+      },
+      continuePropagation() {
+        shouldStopPropagation = false
+      },
+    }
+
+    handler(event)
+
+    if (shouldStopPropagation) {
+      e.stopPropagation()
+    }
+  }
 }
