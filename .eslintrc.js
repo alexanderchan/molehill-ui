@@ -1,5 +1,7 @@
 // yarn add "@typescript-eslint/eslint-plugin" "@typescript-eslint/parser" "eslint-config-prettier" "eslint-plugin-import" "eslint-plugin-no-only-tests" "eslint-plugin-prettier" "eslint-plugin-react" "eslint-plugin-react-hooks" "eslint-plugin-simple-import-sort"
 module.exports = {
+  ignorePatterns: ['*.mdx', 'output.tsx'],
+
   plugins: [
     'react-hooks',
     'no-only-tests',
@@ -117,7 +119,7 @@ module.exports = {
         trailingUnderscore: 'allow',
       },
     ],
-
+    'object-shorthand': ['error', 'always'],
     // disable the base rule as it can report incorrect errors
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-function.md#rule-changes
     'no-empty-function': 'off',

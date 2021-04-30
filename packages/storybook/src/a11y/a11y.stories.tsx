@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/react'
+import { ReactNode, useState } from 'react'
 import {
   useFocus,
   useFocusWithin,
@@ -6,7 +6,7 @@ import {
   useHover,
   UseHoverProps,
 } from '@molehill-ui/hooks/a11y'
-import { ReactNode, useState } from 'react'
+import { Meta, Story } from '@storybook/react'
 
 export default {
   title: 'a11y',
@@ -56,7 +56,7 @@ UseFocusWithin.storyName = 'useFocusWithin'
 
 const UseHoverTemplate: Story<UseHoverProps> = ({ isDisabled }) => {
   const { getHoverProps } = useHover({
-    isDisabled: isDisabled,
+    isDisabled,
     onHoverEnd(event) {
       console.log('hoverEnd', event)
     },

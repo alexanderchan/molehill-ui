@@ -8,7 +8,7 @@ const theme = convertTwToTheme({ twConfig: defaultTwConfig })
 const defaultVarPrefix = 'mh'
 
 const cssVars = convertThemeToCssVar({
-  theme: theme,
+  theme,
   prefix: defaultVarPrefix,
 })
 

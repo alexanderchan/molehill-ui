@@ -1,4 +1,4 @@
-import { useState, FocusEvent } from 'react'
+import { FocusEvent, useState } from 'react'
 
 export type UseFocusWithinProps = {
   onFocus?: (event: FocusEvent) => void

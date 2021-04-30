@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useRef } from 'react'
-import { focusElement, focusFirstElementInScope, isElementInScope } from '.'
 import { useEventListener } from '../utils/useEventListener'
 import { useTabbableElements } from './useTabbableElements'
+import { focusElement, focusFirstElementInScope, isElementInScope } from '.'
 
 export const scopes: Set<RefObject<HTMLElement[]>> = new Set()
 

@@ -20,6 +20,7 @@
     "postinstall": "preconstruct dev",
     "build": "preconstruct build",
     "release": "yarn build && lerna publish",
+    "lint": "eslint 'packages/**/src/**' --ext .ts,.tsx,.js,.jsx --quiet",
     "test": "jest",
     "test:watch": "jest --watch",
     "storybook": "yarn workspace @molehill-ui/storybook storybook"
@@ -40,6 +41,7 @@
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.13",
     "@preconstruct/cli": "^2.0.3",
+    "@testing-library/react-hooks": "^5.1.2",
     "@types/jest": "^26.0.23",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
@@ -50,17 +52,18 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-no-only-tests": "^2.6.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "jest": "^26.6.3",
     "lerna": "^4.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.4",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.4",
-    "@testing-library/react-hooks": "^5.1.2"
+    "typescript": "^4.2.4"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

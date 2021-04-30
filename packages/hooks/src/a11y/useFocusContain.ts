@@ -1,7 +1,7 @@
-import { RefObject, useEffect, useRef, FocusEvent } from 'react'
-import { focusFirstElementInScope, isElementInAnyScope } from '.'
+import { FocusEvent, RefObject, useEffect, useRef } from 'react'
 import { useFocus } from './useFocus'
 import { useTabbableElements } from './useTabbableElements'
+import { focusFirstElementInScope, isElementInAnyScope } from '.'
 
 export let activeScope: RefObject<HTMLElement[]> = null
 

@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import {
   useDialog,
   useFocusTrap,
@@ -6,7 +7,6 @@ import {
   useScrollLock,
 } from '@molehill-ui/hooks'
 import { Meta } from '@storybook/react'
-import { useRef } from 'react'
 
 export default {
   title: 'Dialogs',

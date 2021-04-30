@@ -63,7 +63,7 @@ export function transform({
   } else {
     const leafNode: Node = {
       ...node,
-      nodeType: nodeType,
+      nodeType,
     }
 
     visitorFunction({ node: leafNode })

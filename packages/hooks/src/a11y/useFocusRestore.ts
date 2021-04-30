@@ -1,4 +1,5 @@
 import { KeyboardEvent, RefObject, useLayoutEffect } from 'react'
+import { useSSR } from '../utils'
 import {
   FocusableElementSelector,
   focusElement,
@@ -6,7 +7,6 @@ import {
   isNotTabKey,
   TabbableElementSelector,
 } from '.'
-import { useSSR } from '../utils'
 
 function getFocusableTreeWalker(
   root: HTMLElement,
