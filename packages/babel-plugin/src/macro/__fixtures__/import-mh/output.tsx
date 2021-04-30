@@ -1,5 +1,5 @@
 'use strict'
 
 var objectStyles = {
-  backgroundColor: 'var(--blue-100)',
+  backgroundColor: 'var(--mh-blue-100)',
 }

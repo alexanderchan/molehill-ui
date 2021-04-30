@@ -1,60 +1,28 @@
-const varReplaceRegex = /(?<!var\(\s*)--([a-zA-Z\-_\d]+)/gm
-
-// Theme
-
-// move this to config
-const breakPoints = {
-  sm: '640px',
-  md: '768px',
-  lg: '1024px',
-  xl: '1280px',
-  '2xl': '1536px',
-}
-
-// transforms to: { sm: "@media (min-width: 640px)", md: "@media (min-width: 768px)", ... }
-const mediaBreakPoints = Object.fromEntries(
-  Object.entries(breakPoints).map(([key, value]) => [
-    `@media:${key}`,
-    `@media (min-width: ${value})`,
-  ])
-)
-
-const shortHandPropertyMap = {
-  bg: 'background',
-
-  m: 'margin',
-  mt: 'marginTop',
-  mb: 'marginBottom',
-  mr: 'marginRight',
-  ml: 'marginLeft',
-  mx: ['marginLeft', 'marginRight'],
-  my: ['marginTop', 'marginBottom'],
-
-  p: 'padding',
-  pt: 'paddingTop',
-  pb: 'paddingBottom',
-  pr: 'paddingRight',
-  pl: 'paddingLeft',
-  px: ['paddingLeft', 'paddingRight'],
-  py: ['paddingTop', 'paddingBottom'],
-
-  ...mediaBreakPoints,
-}
+import { addVar } from './utils/addVar'
+import { getShortHandProperties } from './utils/getShortHandProperties'
 
 // jsx attributes to search through
 const attributesToReplace = ['sx', 'variants', 'css', 'style']
 
-// adds the --var() wrapper
-function addVar(cssPropertyValue) {
-  if (typeof cssPropertyValue !== 'string') {
-    return cssPropertyValue
+const MAX_DEPTH = 6
+
+function findIdentifier({ path, depth }) {
+  if (depth > MAX_DEPTH || !path) {
+    return null
   }
 
-  if (cssPropertyValue.includes('--')) {
-    return cssPropertyValue.replace(varReplaceRegex, 'var(--$1)')
+  if (path?.parent?.key?.type === 'Identifier') {
+    return path?.parent?.key?.name
+  } else {
+    return findIdentifier({
+      path: path?.parentPath,
+      depth: depth + 1,
+    })
   }
+}
 
-  return cssPropertyValue
+function getPropertyName(path) {
+  return findIdentifier({ path, depth: 0 })
 }
 
 // Babel plugin
@@ -62,19 +30,48 @@ function addVar(cssPropertyValue) {
 export function traverseVars({ t }) {
   const visitor = {
     // translate --short-hand => var(--short-hand) in strings
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     StringLiteral(path) {
-      path.node.value = addVar(path.node.value)
+      const propertyName = getPropertyName(path)
+      path.node.value = addVar({
+        propertyName,
+        cssPropertyValue: path.node.value,
+      })
     },
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    NumericLiteral(path) {
+      const propertyName = getPropertyName(path)
+      const updatedValue = addVar({
+        propertyName,
+        cssPropertyValue: path.node.value,
+      })
 
+      if (typeof updatedValue === 'string') {
+        path.replaceWith(t.stringLiteral(updatedValue))
+      }
+    },
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     TemplateElement(path) {
-      path.node.value.raw = addVar(path.node.value.raw)
+      const propertyName = getPropertyName(path)
+      path.node.value.raw = addVar({
+        propertyName,
+        cssPropertyValue: path.node.value.raw,
+      })
       // TODO: check the difference between raw and cooked
-      path.node.value.cooked = addVar(path.node.value.cooked)
+      path.node.value.cooked = addVar({
+        propertyName,
+        cssPropertyValue: path.node.value.cooked,
+      })
     },
 
     // shorthand and media query replacements
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     Property(path) {
-      const replacementNames = shortHandPropertyMap[path.node.key.name]
+      // handle object idenfier md: and '@media:md': string literal identifiers
+      const replacementNames = getShortHandProperties({
+        property: path.node.key.name ?? path.node.key.value,
+      })
+
       if (replacementNames) {
         if (typeof replacementNames === 'string') {
           const newName = replacementNames
@@ -108,6 +105,7 @@ export default function ({ types: t }) {
   return {
     name: '@molehill-ui',
     visitor: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       JSXAttribute(path) {
         if (attributesToReplace.includes(path.node.name.name)) {
           path.traverse(traverseVars({ t }))

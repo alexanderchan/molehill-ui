@@ -6,25 +6,25 @@ function App() {
   var someTemplateVar = '1rem'
   return /*#__PURE__*/ (0, _jsxRuntime.jsxs)('div', {
     css: {
-      backgroundColor: 'var(--blue-100)',
+      backgroundColor: 'var(--mh-blue-100)',
       color: 'var(--red-500)',
       someFunc: function someFunc() {},
-      paddingLeft: 'var(--space-5)',
-      paddingRight: 'var(--space-5)',
-      margin: 'var(--space-5) '
-        .concat(someTemplateVar, ' var(--space-5) ')
+      paddingLeft: 'var(--mh-space-5)',
+      paddingRight: 'var(--mh-space-5)',
+      margin: 'var(--mh-space-5) '
+        .concat(someTemplateVar, ' var(--mh-space-5) ')
         .concat(someTemplateVar),
-      padding: 'calc(var(--space-5) + 5px + var( --space-10 ))',
+      padding: 'calc(var(--mh-space-5) + 5px + var( --space-10 ))',
       '& > svg': {
-        color: 'var(--indigo-100)',
+        color: 'var(--mh-indigo-100)',
       },
-      paddingTop: 'var(--space-2)',
-      sm: {
-        background: 'var(--blue-100)',
+      paddingTop: 'var(--mh-space-2)',
+      '@media (min-width: 640px)': {
+        background: 'var(--mh-blue-100)',
       },
     },
     style: {
-      padding: 'var(--space-5)',
+      padding: 'var(--mh-space-5)',
     },
     children: [' ', 'test', ' '],
   })

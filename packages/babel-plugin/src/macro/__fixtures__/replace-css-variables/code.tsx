@@ -1,6 +1,6 @@
-import macro from '../../macro'
+import mh from '../../macro'
 
-const objectStyles = macro({
+const objectStyles = mh({
   backgroundColor: '--blue-100',
   color: 'var(--red-500)',
   someFunc() {},
@@ -13,5 +13,8 @@ const objectStyles = macro({
   pt: '--space-2',
   sm: {
     bg: '--blue-100',
+  },
+  '@media:md': {
+    color: 'red-100',
   },
 })

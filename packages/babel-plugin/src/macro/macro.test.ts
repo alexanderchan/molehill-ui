@@ -1,6 +1,6 @@
-import path from 'path'
-import pluginTester from 'babel-plugin-tester'
 import plugin from 'babel-plugin-macros'
+import pluginTester from 'babel-plugin-tester'
+import path from 'path'
 
 pluginTester({
   plugin,
@@ -8,9 +8,9 @@ pluginTester({
   babelOptions: {
     filename: __filename,
     presets: [
-      '@babel/preset-env',
-      ['@babel/preset-react', { runtime: 'automatic' }],
       '@babel/preset-typescript',
+      ['@babel/preset-react', { runtime: 'automatic' }],
+      '@babel/preset-env',
     ],
   },
   filename: __filename,
