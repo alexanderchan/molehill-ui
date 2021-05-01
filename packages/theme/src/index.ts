@@ -1,5 +1,5 @@
-import extend from 'just-extend'
 import { convertThemeToCssVar } from './util/convertThemeToCssVar'
+import { mergeDeep } from './util/mergeDeep'
 import { Config } from './theme.d'
 import { defaultConfig } from './'
 
@@ -13,10 +13,12 @@ export function createCssTheme(
   } = { config: defaultConfig }
 ): CssTheme {
   const mergedConfig: Config = {
+    ...defaultConfig,
     ...config,
     theme: {
-      ...extend(defaultConfig.theme, config?.extend),
-      ...config?.theme,
+      ...(config?.theme
+        ? config?.theme
+        : mergeDeep(defaultConfig.theme, config?.extend)),
     },
   } as Config
 
@@ -37,6 +39,7 @@ export type {
   MhExtendedCssProperties,
   Scale,
 } from './theme.d'
+
 export type { Node } from './util/transform'
 export { transform } from './util/transform'
 export { getThemeVar } from './util/getThemeVar'

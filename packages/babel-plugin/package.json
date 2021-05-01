@@ -18,7 +18,8 @@
     "@babel/types": "^7.12.13",
     "@molehill-ui/theme": "^1.0.1-alpha.58+fdd4aee",
     "babel-plugin-macros": "^3.0.1",
-    "just-clone": "^3.1.0"
+    "just-clone": "^3.1.0",
+    "cosmiconfig": "^7.0.0"
   },
   "devDependencies": {
     "babel-plugin-macros": "^3.0.1",

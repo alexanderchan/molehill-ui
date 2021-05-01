@@ -105,11 +105,11 @@ type InsertionMethod = 'append'
 export type Config = {
   prefix?: string // The value css vars are prefixed with --mh-color-black
   replaceToken?: string // the token to look for css vars default: -- but could be $
-
+  attributesToReplace?: string[] // jsx attributes to search through
   /** Determines how the CSS file is inserted to a document. */
   insertionMethod?: 'append' | 'prepend' | (() => (cssVars: CssVars) => void)
 
   theme: Theme
-  extend: Partial<Theme>
+  extend?: Partial<Theme>
   cssVars?: CssVars
 }

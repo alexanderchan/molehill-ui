@@ -1,31 +1,11 @@
 import { addVar } from './utils/addVar'
+import { getPropertyName } from './utils/getPropertyName'
 import { getShortHandProperties } from './utils/getShortHandProperties'
-
-// jsx attributes to search through
-const attributesToReplace = ['sx', 'variants', 'css', 'style']
-
-const MAX_DEPTH = 6
-
-function findIdentifier({ path, depth }) {
-  if (depth > MAX_DEPTH || !path) {
-    return null
-  }
-
-  if (path?.parent?.key?.type === 'Identifier') {
-    return path?.parent?.key?.name
-  } else {
-    return findIdentifier({
-      path: path?.parentPath,
-      depth: depth + 1,
-    })
-  }
-}
-
-function getPropertyName(path) {
-  return findIdentifier({ path, depth: 0 })
-}
+import { loadConfig } from './loadConfig'
 
 // Babel plugin
+
+const config = loadConfig()
 
 export function traverseVars({ t }) {
   const visitor = {
@@ -36,6 +16,7 @@ export function traverseVars({ t }) {
       path.node.value = addVar({
         propertyName,
         cssPropertyValue: path.node.value,
+        config,
       })
     },
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -44,6 +25,7 @@ export function traverseVars({ t }) {
       const updatedValue = addVar({
         propertyName,
         cssPropertyValue: path.node.value,
+        config,
       })
 
       if (typeof updatedValue === 'string') {
@@ -56,11 +38,13 @@ export function traverseVars({ t }) {
       path.node.value.raw = addVar({
         propertyName,
         cssPropertyValue: path.node.value.raw,
+        config,
       })
       // TODO: check the difference between raw and cooked
       path.node.value.cooked = addVar({
         propertyName,
         cssPropertyValue: path.node.value.cooked,
+        config,
       })
     },
 
@@ -107,7 +91,7 @@ export default function ({ types: t }) {
     visitor: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       JSXAttribute(path) {
-        if (attributesToReplace.includes(path.node.name.name)) {
+        if (config.attributesToReplace.includes(path.node.name.name)) {
           path.traverse(traverseVars({ t }))
         }
 

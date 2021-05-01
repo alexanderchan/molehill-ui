@@ -13,6 +13,7 @@ const cssVars = convertThemeToCssVar({
 })
 
 export const defaultConfig: Config = {
+  attributesToReplace: ['sx', 'variants', 'css', 'style'],
   prefix: defaultVarPrefix,
   replaceToken: '--',
   theme,

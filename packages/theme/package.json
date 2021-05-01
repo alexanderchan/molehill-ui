@@ -8,13 +8,10 @@
     "test": "yarn --cwd ../../ test --testPathPattern  packages/theme"
   },
   "devDependencies": {
-    "@types/just-extend": "^1.1.0",
     "csstype": "^3.0.7"
   },
   "dependencies": {
-    "cosmiconfig": "^7.0.0",
-    "just-clone": "^3.1.0",
-    "just-extend": "^4.1.1"
+    "just-clone": "^3.1.0"
   },
   "gitHead": "fdd4aee47b0fcf3697281ebb4e2414227ff32b26",
   "repository": "git@github.com:molehill-ui/molehill-ui.git",

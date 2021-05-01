@@ -3309,11 +3309,6 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/just-extend@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@types/just-extend/-/just-extend-1.1.0.tgz#1dae177f58e35721cab85dbc07913b4713d66faa"
-  integrity sha512-vLX87iZxBulJ3dG5vpbM3kWVh8lBK8JCDFD68DaUYHgYGTBL9SqztLG29JLIRbE53ErwlwyaH7jUFxtxUkkTlg==
-
 "@types/markdown-to-jsx@^6.11.3":
   version "6.11.3"
   resolved "https://registry.yarnpkg.com/@types/markdown-to-jsx/-/markdown-to-jsx-6.11.3.tgz#cdd1619308fecbc8be7e6a26f3751260249b020e"
@@ -9077,11 +9072,6 @@ just-clone@^3.1.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/just-clone/-/just-clone-3.2.1.tgz#7396be5790d33f0fa7e8a145d7983b986a8cee39"
   integrity sha512-PFotEVrrzAnwuWTUOFquDShWrHnUnhxNrVs1VFqkNfnoH3Sn5XUlDOePYn2Vv5cN8xV2y69jf8qEoQHm7eoLnw==
-
-just-extend@^4.1.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/just-extend/-/just-extend-4.2.1.tgz#ef5e589afb61e5d66b24eca749409a8939a8c744"
-  integrity sha512-g3UB796vUFIY90VIv/WX3L2c8CS2MdWUww3CNrYmqza1Fg0DURc2K/O4YrnklBdQarSJ/y8JnJYDGc+1iumQjg==
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"

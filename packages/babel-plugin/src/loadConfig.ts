@@ -1,6 +1,5 @@
+import { Config, createCssTheme } from '@molehill-ui/theme'
 import { cosmiconfigSync } from 'cosmiconfig'
-import { defaultConfig } from './defaultConfig'
-import { Config } from './theme'
 
 const moduleName = 'molehill'
 
@@ -9,9 +8,9 @@ export function loadConfig(): Config {
 
   const searchedFor = explorerSync.search()
 
-  if (searchedFor?.config) {
-    return searchedFor?.config
+  if (searchedFor?.config?.default || searchedFor?.config) {
+    return searchedFor?.config?.default || searchedFor?.config
   } else {
-    return defaultConfig
+    return createCssTheme()
   }
 }
