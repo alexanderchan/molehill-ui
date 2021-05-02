@@ -20,5 +20,5 @@ export function useFocusFirst(
     ) {
       focusFirstElementInScope(scopeRef?.current)
     }
-  }, [scopeRef])
+  }, [scopeRef, isEnabled])
 }

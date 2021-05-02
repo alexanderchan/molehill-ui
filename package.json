@@ -20,6 +20,7 @@
     "postinstall": "preconstruct dev",
     "build": "preconstruct build",
     "release": "yarn build && lerna publish",
+    "format": "prettier . -w",
     "lint": "eslint 'packages/**/src/**' --ext .ts,.tsx,.js,.jsx --quiet",
     "test": "jest",
     "test:watch": "jest --watch",

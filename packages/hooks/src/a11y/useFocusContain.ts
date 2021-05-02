@@ -1,4 +1,10 @@
-import { FocusEvent, RefObject, useEffect, useRef } from 'react'
+import {
+  FocusEvent,
+  RefObject,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+} from 'react'
 import { useFocus } from './useFocus'
 import { useTabbableElements } from './useTabbableElements'
 import { focusFirstElementInScope, isElementInAnyScope } from '.'
@@ -60,6 +66,13 @@ export function useFocusContain(
   })
 
   const { onFocus, onBlur } = getFocusProps()
+  const onFocusRef = useRef(onFocus)
+  const onBlurRef = useRef(onBlur)
+
+  useLayoutEffect(() => {
+    onFocusRef.current = onFocus
+    onBlurRef.current = onBlur
+  })
 
   useEffect(() => {
     const scope = scopeRef?.current
@@ -69,26 +82,26 @@ export function useFocusContain(
     }
 
     document.addEventListener('keydown', onKeyDown, false)
-    document.addEventListener('focusin', onFocus as any, false)
+    document.addEventListener('focusin', onFocusRef.current as any, false)
 
     scope.forEach((element) =>
-      element.addEventListener('focusout', onBlur as any, false)
+      element.addEventListener('focusout', onBlurRef.current as any, false)
     )
 
     scope.forEach((element) =>
-      element.addEventListener('focusin', onFocus as any, false)
+      element.addEventListener('focusin', onFocusRef.current as any, false)
     )
 
     return () => {
       document.removeEventListener('keydown', onKeyDown, false)
-      document.removeEventListener('focusin', onFocus as any, false)
+      document.removeEventListener('focusin', onFocusRef.current as any, false)
 
       scope.forEach((element) =>
-        element.removeEventListener('focusout', onBlur as any, false)
+        element.removeEventListener('focusout', onBlurRef.current as any, false)
       )
 
       scope.forEach((element) =>
-        element.removeEventListener('focusin', onFocus as any, false)
+        element.removeEventListener('focusin', onFocusRef.current as any, false)
       )
     }
   }, [scopeRef, isEnabled, onKeyDown])

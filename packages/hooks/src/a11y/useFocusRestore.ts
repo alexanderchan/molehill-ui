@@ -1,4 +1,4 @@
-import { KeyboardEvent, RefObject, useLayoutEffect } from 'react'
+import { KeyboardEvent, RefObject, useLayoutEffect, useRef } from 'react'
 import { useSSR } from '../utils'
 import {
   FocusableElementSelector,
@@ -99,16 +99,25 @@ export function useFocusRestore(
     }
   }
 
+  const onKeyDownRef = useRef(onKeyDown)
+  useLayoutEffect(() => {
+    onKeyDownRef.current = onKeyDown
+  })
+
   useLayoutEffect(() => {
     const scope = scopeRef?.current
 
     if (!isContained) {
-      document.addEventListener('keydown', onKeyDown as any, true)
+      document.addEventListener('keydown', onKeyDownRef.current as any, true)
     }
 
     return () => {
       if (!isContained) {
-        document.removeEventListener('keydown', onKeyDown as any, true)
+        document.removeEventListener(
+          'keydown',
+          onKeyDownRef.current as any,
+          true
+        )
       }
 
       if (
@@ -123,5 +132,6 @@ export function useFocusRestore(
         })
       }
     }
-  }, [isEnabled, isContained, nodeToRestore])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isEnabled, isContained, nodeToRestore]) // scopeRef
 }

@@ -77,6 +77,11 @@ export interface UseHoverProps<T = Element> {
   onHoverChange?: (isHovered: boolean) => void
 }
 
+const canHover = <T>(
+  isHovered: boolean,
+  pointerType: PointerEventType<T>['pointerType']
+) => pointerType !== 'touch' && !isHovered
+
 export function useHover<T extends Element>({
   isDisabled = false,
   onHoverChange,
@@ -89,41 +94,40 @@ export function useHover<T extends Element>({
     ignoreEmulatedMouseEvents: false,
   }).current
 
-  const canHover = (
-    isHovered: boolean,
-    pointerType: PointerEventType<T>['pointerType']
-  ) => pointerType !== 'touch' && !isHovered
-
   useEffect(setupGlobalTouchEvents, [])
+
+  const onHoverStartRef = useRef(onHoverStart)
+  const onHoverEndRef = useRef(onHoverStart)
+  const onHoverChangeRef = useRef(onHoverChange)
 
   const handleHoverStart = useCallback(
     (event: HoverEvent<T>, pointerType: PointerEventType<T>['pointerType']) => {
-      if (isDisabled || !canHover(state.isHovered, pointerType)) {
+      if (isDisabled || !canHover<T>(state.isHovered, pointerType)) {
         return
       }
 
       state.isHovered = true
 
-      onHoverStart?.(event, pointerType)
-      onHoverChange?.(true)
+      onHoverStartRef?.current?.(event, pointerType)
+      onHoverChangeRef.current?.(true)
       setIsHovered(true)
     },
-    [isDisabled, canHover, setIsHovered]
+    [isDisabled, setIsHovered, state]
   )
 
   const handleHoverEnd = useCallback(
     (event: HoverEvent<T>, pointerType: PointerEventType<T>['pointerType']) => {
-      if (isDisabled || !canHover(!state.isHovered, pointerType)) {
+      if (isDisabled || !canHover<T>(!state.isHovered, pointerType)) {
         return
       }
 
       state.isHovered = false
 
-      onHoverEnd?.(event, pointerType)
-      onHoverChange?.(false)
+      onHoverEndRef?.current?.(event, pointerType)
+      onHoverChangeRef.current?.(true)
       setIsHovered(false)
     },
-    [isDisabled, canHover, setIsHovered]
+    [isDisabled, setIsHovered, state]
   )
 
   const getPointerEventProps = useCallback(
@@ -161,7 +165,7 @@ export function useHover<T extends Element>({
         handleHoverEnd(event, 'mouse')
       },
     }),
-    [handleHoverStart, handleHoverEnd]
+    [handleHoverStart, handleHoverEnd, state]
   )
 
   const getHoverProps = useCallback(() => {
