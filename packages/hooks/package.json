@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/hooks",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.8+0a7fbc3",
   "description": "React hooks for MoleHill UI",
   "main": "dist/molehill-ui-hooks.cjs.js",
   "license": "MIT",
@@ -17,5 +17,6 @@
       "a11y/index.ts",
       "dialog/index.ts"
     ]
-  }
+  },
+  "gitHead": "0a7fbc314e71f40aaededc8eab874a6952b325d1"
 }
