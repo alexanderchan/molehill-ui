@@ -1,0 +1,27 @@
+{
+  "name": "molehill-ui",
+  "version": "0.0.1-alpha.58+fdd4aee",
+  "description": "Babel plugin to transpile sx prop",
+  "main": "dist/molehill-ui.cjs.js",
+  "module": "dist/molehill-ui.esm.js",
+  "author": "Alex Chan <alex@alexmchan.com>",
+  "license": "MIT",
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts",
+      "cli.ts"
+    ]
+  },
+  "repository": "git@github.com:molehill-ui/molehill-ui.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "bin": {
+    "molehill-ui": "bin/mh.js",
+    "mh": "bin/mh.js"
+  },
+  "dependencies": {
+    "commander": "^7.2.0",
+    "enquirer": "^2.3.6"
+  }
+}
