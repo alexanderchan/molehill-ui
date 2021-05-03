@@ -1,6 +1,6 @@
 {
   "name": "molehill-ui",
-  "version": "0.0.1-alpha.14+80bceaa",
+  "version": "0.0.1-alpha.15+833fc1c",
   "description": "Babel plugin to transpile sx prop",
   "main": "dist/molehill-ui.cjs.js",
   "module": "dist/molehill-ui.esm.js",
@@ -21,7 +21,7 @@
     "commander": "^7.2.0",
     "enquirer": "^2.3.6"
   },
-  "gitHead": "80bceaae0b4079862fb18ee109c73d76d4dc24c6",
+  "gitHead": "833fc1ce3a7905a15a1911fb7f0d82b815007abc",
   "publishConfig": {
     "access": "public"
   }
