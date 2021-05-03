@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/theme",
-  "version": "1.0.1-alpha.13+c21423d",
+  "version": "1.0.1-alpha.14+80bceaa",
   "main": "dist/molehill-ui-theme.cjs.js",
   "author": "Alex Chan <achan@godaddy.com>",
   "license": "MIT",
@@ -13,6 +13,9 @@
   "dependencies": {
     "just-clone": "^3.1.0"
   },
-  "gitHead": "c21423d505b4ac7cb1b1de17a8c7268fa42725fc",
-  "repository": "git@github.com:molehill-ui/molehill-ui.git"
+  "gitHead": "80bceaae0b4079862fb18ee109c73d76d4dc24c6",
+  "repository": "git@github.com:molehill-ui/molehill-ui.git",
+  "publishConfig": {
+    "access": "public"
+  }
 }
