@@ -1,5 +1,6 @@
 {
   "main": "dist/molehill-ui-babel-plugin-macro.cjs.js",
+  "module": "dist/molehill-ui-babel-plugin-macro.esm.js",
   "dependencies": {
     "babel-plugin-macros": "^3.0.1"
   }

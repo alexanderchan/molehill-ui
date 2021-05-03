@@ -3,6 +3,7 @@
   "version": "0.0.1-alpha.10+150524a",
   "description": "Babel plugin to transpile sx prop",
   "main": "dist/molehill-ui-babel-plugin.cjs.js",
+  "module": "dist/molehill-ui-babel-plugin.esm.js",
   "author": "Wes Cole <wesley.cole87@gmail.com>",
   "license": "MIT",
   "preconstruct": {

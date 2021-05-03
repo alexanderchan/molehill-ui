@@ -91,7 +91,7 @@ export default function ({ types: t }) {
     visitor: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       JSXAttribute(path) {
-        if (config.attributesToReplace.includes(path.node.name.name)) {
+        if (config?.attributesToReplace?.includes(path.node.name.name)) {
           path.traverse(traverseVars({ t }))
         }
 

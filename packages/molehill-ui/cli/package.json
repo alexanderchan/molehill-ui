@@ -1,0 +1,4 @@
+{
+  "main": "dist/molehill-ui-cli.cjs.js",
+  "module": "dist/molehill-ui-cli.esm.js"
+}
