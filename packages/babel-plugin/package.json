@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/babel-plugin",
-  "version": "0.0.1-alpha.8+0a7fbc3",
+  "version": "0.0.1-alpha.9+00ab675",
   "description": "Babel plugin to transpile sx prop",
   "main": "dist/molehill-ui-babel-plugin.cjs.js",
   "author": "Wes Cole <wesley.cole87@gmail.com>",
@@ -16,7 +16,7 @@
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.16",
     "@babel/types": "^7.12.13",
-    "@molehill-ui/theme": "^1.0.1-alpha.8+0a7fbc3",
+    "@molehill-ui/theme": "^1.0.1-alpha.9+00ab675",
     "babel-plugin-macros": "^3.0.1",
     "cosmiconfig": "^7.0.0",
     "just-clone": "^3.1.0"
@@ -27,6 +27,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "gitHead": "0a7fbc314e71f40aaededc8eab874a6952b325d1",
+  "gitHead": "00ab675eb591849617014efad73087ee51f4461f",
   "repository": "git@github.com:molehill-ui/molehill-ui.git"
 }
