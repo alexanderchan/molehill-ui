@@ -1,0 +1,26 @@
+{
+  "name": "@molehill-ui/postcss-plugin",
+  "version": "0.0.1-alpha.15+833fc1c",
+  "description": "PostCSS plugin for generating CSS",
+  "main": "dist/molehill-ui-postcss-plugin.cjs.js",
+  "module": "dist/molehill-ui-postcss-plugin.esm.js",
+  "author": "Wes Cole <wesley.cole87@gmail.com>",
+  "license": "MIT",
+  "preconstruct": {
+    "entrypoints": [
+      "index.ts"
+    ]
+  },
+  "dependencies": {
+    "@molehill-ui/theme": "^1.0.1-alpha.15+833fc1c",
+    "cosmiconfig": "^7.0.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.2.13"
+  },
+  "gitHead": "833fc1ce3a7905a15a1911fb7f0d82b815007abc",
+  "repository": "git@github.com:molehill-ui/molehill-ui.git",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,7 +1,5 @@
 // yarn add "@typescript-eslint/eslint-plugin" "@typescript-eslint/parser" "eslint-config-prettier" "eslint-plugin-import" "eslint-plugin-no-only-tests" "eslint-plugin-prettier" "eslint-plugin-react" "eslint-plugin-react-hooks" "eslint-plugin-simple-import-sort"
 module.exports = {
-  ignorePatterns: ['*.mdx', 'output.tsx'],
-
   plugins: [
     'react-hooks',
     'no-only-tests',
