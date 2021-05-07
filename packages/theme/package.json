@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/theme",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "main": "dist/molehill-ui-theme.cjs.js",
   "author": "Alex Chan <achan@godaddy.com>",
   "license": "MIT",
