@@ -1,5 +1,7 @@
-import { createCssTheme } from '@molehill-ui/theme'
+const { createCssTheme } = require('@molehill-ui/theme')
 
-export default createCssTheme({
+const theme = createCssTheme({
   config: {},
 })
+
+module.exports = theme

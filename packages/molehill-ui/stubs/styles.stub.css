@@ -1,1 +1,2 @@
-@import 'molehill/theme';
+@import '@molehill-ui/base';
+@import '@molehill-ui/variables';

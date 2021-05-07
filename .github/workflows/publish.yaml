@@ -2,9 +2,9 @@ name: build, test, and publish packages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build-test-and-publish:
@@ -35,13 +35,14 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: install dependencies
-        run:  yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       - name: build
-        run:  yarn preconstruct build
+        run: |
+          yarn build
 
       - name: test
-        run:  yarn test
+        run: yarn test
 
       # no verify access for automation tokens: https://github.com/lerna/lerna/issues/2788
       - name: publish
