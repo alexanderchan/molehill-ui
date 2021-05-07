@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/storybook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Storybook for development",
   "main": "dist/molehill-ui-storybook.cjs.js",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@molehill-ui/hooks": "0.0.1-alpha.19+0b473bf",
+    "@molehill-ui/hooks": "^0.0.1-alpha.20",
     "@storybook/addon-actions": "^6.2.7",
     "@storybook/addon-essentials": "^6.2.7",
     "@storybook/addon-links": "^6.2.7",
