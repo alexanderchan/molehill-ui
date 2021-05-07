@@ -6,8 +6,9 @@ function App() {
   var someTemplateVar = '1rem'
   return /*#__PURE__*/ (0, _jsxRuntime.jsxs)('div', {
     css: {
-      backgroundColor: 'var(--mh-blue-100)',
+      backgroundColor: 'var(--mh-color-blue-100)',
       color: 'var(--red-500)',
+      fontWeight: 'var(--mh-font-weight-bold)',
       someFunc: function someFunc() {},
       paddingLeft: 'var(--mh-space-5)',
       paddingRight: 'var(--mh-space-5)',

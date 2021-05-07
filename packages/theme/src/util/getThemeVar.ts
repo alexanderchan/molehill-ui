@@ -1,5 +1,6 @@
 import { depluralize } from './depluralize'
 import { getScaleForProperty } from './getScaleForProperty'
+import { kebabCase } from './kebab-case'
 
 export function buildNameFromScale({
   value,
@@ -10,7 +11,8 @@ export function buildNameFromScale({
   scale: string
   prefix?: string
 }) {
-  const depluralizedScale = depluralize({ name: scale })
+  const hyphenatedScale = scale && kebabCase(scale)
+  const depluralizedScale = depluralize({ name: hyphenatedScale })
   return `--${prefix ? `${prefix}-` : ''}${depluralizedScale}-${value}`
 }
 

@@ -3,8 +3,9 @@ function App() {
   return (
     <div
       sx={{
-        backgroundColor: '--blue-100',
+        backgroundColor: 'blue-100',
         color: 'var(--red-500)',
+        fontWeight: 'bold',
         someFunc() {},
         px: '--space-5',
         m: `--space-5 ${someTemplateVar} --space-5 ${someTemplateVar}`,
