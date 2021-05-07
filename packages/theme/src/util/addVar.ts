@@ -1,4 +1,4 @@
-import { Config, defaultConfig, getThemeVar } from '@molehill-ui/theme'
+import { Config, defaultConfig, getThemeVar } from '../'
 
 const varReplaceRegexes: Record<string, RegExp> = {
   default: /(?<!var\(\s*)--([a-zA-Z\-_\d]+)/gm,

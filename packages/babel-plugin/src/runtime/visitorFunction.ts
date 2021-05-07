@@ -1,5 +1,4 @@
-import { Config } from '@molehill-ui/theme'
-import { addVar } from '../utils/addVar'
+import { addVar, Config } from '@molehill-ui/theme'
 import { getShortHandProperties } from '../utils/getShortHandProperties'
 import { Node } from './transform'
 

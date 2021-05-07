@@ -1,4 +1,4 @@
-import { addVar } from './utils/addVar'
+import { addVar } from '@molehill-ui/theme'
 import { getPropertyName } from './utils/getPropertyName'
 import { getShortHandProperties } from './utils/getShortHandProperties'
 import { loadConfig } from './loadConfig'

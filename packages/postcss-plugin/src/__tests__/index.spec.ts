@@ -20,7 +20,10 @@ describe('postcss-plugin', () => {
         @import 'molehill-ui/variables';
         @import 'molehill-ui/base';
         a {
-          color: blue;
+          background-color: blue-400;
+          font-weight: bold;
+          color: blue-500;
+          padding: 4;
         }
       `,
       {}
@@ -328,7 +331,7 @@ describe('postcss-plugin', () => {
       Remove the margin in all browsers.
       */
               body {
-      	margin: 0;
+      	margin: var(--mh-space-0);
       }
               /**
       Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
@@ -441,7 +444,7 @@ describe('postcss-plugin', () => {
       	font-family: inherit; /* 1 */
       	font-size: 100%; /* 1 */
       	line-height: 1.15; /* 1 */
-      	margin: 0; /* 2 */
+      	margin: var(--mh-space-0); /* 2 */
       }
               /**
       Remove the inheritance of text transform in Edge and Firefox.
@@ -465,7 +468,7 @@ describe('postcss-plugin', () => {
       */
               ::-moz-focus-inner {
       	border-style: none;
-      	padding: 0;
+      	padding: var(--mh-space-0);
       }
               /**
       Restore the focus styles unset by the previous rule.
@@ -478,13 +481,13 @@ describe('postcss-plugin', () => {
       See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
       */
               :-moz-ui-invalid {
-      	box-shadow: none;
+      	box-shadow: var(--mh-shadow-none);
       }
               /**
       Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
       */
               legend {
-      	padding: 0;
+      	padding: var(--mh-space-0);
       }
               /**
       Add the correct vertical alignment in Chrome and Firefox.
@@ -552,10 +555,10 @@ describe('postcss-plugin', () => {
       figure,
       p,
       pre {
-        margin: 0;
+        margin: var(--mh-space-0);
       }
               button {
-        background-color: transparent;
+        background-color: var(--mh-color-transparent);
         background-image: none;
       }
               /**
@@ -567,14 +570,14 @@ describe('postcss-plugin', () => {
         outline: 5px auto -webkit-focus-ring-color;
       }
               fieldset {
-        margin: 0;
-        padding: 0;
+        margin: var(--mh-space-0);
+        padding: var(--mh-space-0);
       }
               ol,
       ul {
         list-style: none;
-        margin: 0;
-        padding: 0;
+        margin: var(--mh-space-0);
+        padding: var(--mh-space-0);
       }
               /**
         * Tailwind custom reset styles
@@ -626,7 +629,7 @@ describe('postcss-plugin', () => {
       ::before,
       ::after {
         box-sizing: border-box; /* 1 */
-        border-width: 0; /* 2 */
+        border-width: var(--mh-border-width-0); /* 2 */
         border-style: solid; /* 2 */
         border-color: currentColor; /* 2 */
       }
@@ -692,7 +695,7 @@ describe('postcss-plugin', () => {
       optgroup,
       select,
       textarea {
-        padding: 0;
+        padding: var(--mh-space-0);
         line-height: inherit;
         color: inherit;
       }
@@ -740,7 +743,10 @@ describe('postcss-plugin', () => {
         height: auto;
       }
               a {
-                color: blue;
+                background-color: var(--mh-color-blue-400);
+                font-weight: var(--mh-font-weight-bold);
+                color: var(--mh-color-blue-500);
+                padding: var(--mh-space-4);
               }
             "
     `)
