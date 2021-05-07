@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/postcss-plugin",
-  "version": "0.0.1-alpha.15+833fc1c",
+  "version": "0.0.1-alpha.18+85aaae2",
   "description": "PostCSS plugin for generating CSS",
   "main": "dist/molehill-ui-postcss-plugin.cjs.js",
   "module": "dist/molehill-ui-postcss-plugin.esm.js",
@@ -12,7 +12,7 @@
     ]
   },
   "dependencies": {
-    "@molehill-ui/theme": "^1.0.1-alpha.15+833fc1c",
+    "@molehill-ui/theme": "^1.0.1-alpha.18+85aaae2",
     "cosmiconfig": "^7.0.0",
     "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "postcss": "^8.2.13"
   },
-  "gitHead": "833fc1ce3a7905a15a1911fb7f0d82b815007abc",
+  "gitHead": "85aaae2183b1471dc1afee1c911410e3fe20c7b2",
   "repository": "git@github.com:molehill-ui/molehill-ui.git",
   "publishConfig": {
     "access": "public"
