@@ -284,6 +284,13 @@ describe('postcss-plugin', () => {
       	--mh-letter-spacing-wide: 0.025em;
       	--mh-letter-spacing-wider: 0.05em;
       	--mh-letter-spacing-widest: 0.1em;
+      	--mh-space-w-full: 100%;
+      	--mh-space-h-full: 100%;
+      	--mh-space-full: 100%;
+      	--mh-space-w-screen: 100vw;
+      	--mh-space-h-screen: 100vh;
+      	--mh-space-min: min-content;
+      	--mh-space-max: max-content;
       }
               /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
               /*
