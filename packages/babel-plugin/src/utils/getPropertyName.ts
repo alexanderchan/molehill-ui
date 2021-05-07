@@ -1,5 +1,5 @@
-import { findIdentifier } from "./findIdentifier";
+import { findIdentifier } from './findIdentifier'
 
 export function getPropertyName(path) {
-  return findIdentifier({ path, depth: 0 });
+  return findIdentifier({ path, depth: 0 })
 }

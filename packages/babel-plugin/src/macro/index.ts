@@ -4,7 +4,7 @@ import { traverseVars } from '../index'
 
 export type MhFn = (props: MhCssProperties) => any
 
-export const mh = createMacro(mhMacro) as MhFn
+export const mh: MhFn = createMacro(mhMacro)
 
 export default mh
 

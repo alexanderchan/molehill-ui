@@ -15,7 +15,6 @@ jobs:
       - uses: actions/setup-node@c46424eee26de4078d34105d3de3cc4992202b1e # v2.1.4
         with:
           node-version: 14
-          registry-url: 'https://npm.pkg.github.com'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -31,7 +30,6 @@ jobs:
 
       - name: install dependencies
         run: |
-          echo "//npm.pkg.github.com/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
           yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
