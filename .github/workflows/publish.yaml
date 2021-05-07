@@ -40,6 +40,7 @@ jobs:
       - name: test
         run:  yarn test
 
+      # no verify access for automation tokens: https://github.com/lerna/lerna/issues/2788
       - name: publish
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -48,4 +49,4 @@ jobs:
           export COMMIT_USER_EMAIL=$(git log -1 --pretty=format:'%ae')
           git config --global user.email "${COMMIT_USER_EMAIL}"
           git config --global user.name "${GITHUB_ACTOR}"
-          yarn lerna publish minor --yes
+          yarn lerna publish minor --yes --no-verify-access
