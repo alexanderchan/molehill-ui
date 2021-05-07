@@ -49,4 +49,4 @@ jobs:
           export COMMIT_USER_EMAIL=$(git log -1 --pretty=format:'%ae')
           git config --global user.email "${COMMIT_USER_EMAIL}"
           git config --global user.name "${GITHUB_ACTOR}"
-          yarn lerna publish minor --yes --no-verify-access
+          yarn lerna publish patch --yes --no-verify-access
