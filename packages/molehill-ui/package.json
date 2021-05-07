@@ -20,7 +20,8 @@
   "dependencies": {
     "chalk": "^4.1.1",
     "commander": "^7.2.0",
-    "enquirer": "^2.3.6"
+    "enquirer": "^2.3.6",
+    "regenerator-runtime": "^0.13.7"
   },
   "gitHead": "0b473bf93a11b002cdcab205c710dd603c64b69c",
   "publishConfig": {
