@@ -1,7 +1,7 @@
 {
   "name": "@molehill-ui/babel-plugin",
   "version": "0.1.0",
-  "description": "Babel plugin to transpile sx prop",
+  "description": "Babel plugin to add theme properties",
   "main": "dist/molehill-ui-babel-plugin.cjs.js",
   "module": "dist/molehill-ui-babel-plugin.esm.js",
   "author": "Wes Cole <wesley.cole87@gmail.com>",
