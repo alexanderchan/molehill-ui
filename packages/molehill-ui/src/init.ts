@@ -3,7 +3,10 @@ import { prompt } from 'enquirer'
 import fs from 'fs'
 import path from 'path'
 
-const STUB_DIRECTORY = `${__dirname}/../stubs`
+// there is a different relative path when run with preconstruct dev
+const STUB_DIRECTORY = fs.existsSync(`${__dirname}/../stubs`)
+  ? `${__dirname}/../stubs`
+  : `${__dirname}/../../stubs`
 
 async function createConfig({
   configPath,
