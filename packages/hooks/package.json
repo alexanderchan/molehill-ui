@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/hooks",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React hooks for MoleHill UI",
   "main": "dist/molehill-ui-hooks.cjs.js",
   "license": "MIT",
