@@ -1,3 +1,5 @@
 import { createCssTheme } from '@molehill-ui/theme'
 
-export default createCssTheme()
+export default createCssTheme({
+  config: {},
+})

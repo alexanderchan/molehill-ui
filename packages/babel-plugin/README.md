@@ -11,3 +11,15 @@ Add this plugin before any plugins that add or process the `css` prop:
   "plugins": ["@molehill-ui"]
 }
 ```
+
+## Setup the config file (optional)
+
+Add a `molehill.config.js` file to the project root.
+
+```tsx
+import { createCssTheme } from '@molehill-ui/theme'
+
+export default createCssTheme({
+  config: {},
+})
+```
