@@ -12,6 +12,12 @@ export function traverseVars({ t }) {
     // translate --short-hand => var(--short-hand) in strings
     // eslint-disable-next-line @typescript-eslint/naming-convention
     StringLiteral(path) {
+      // don't replace vars if this is a key
+      // --blue-100: "blue"
+      if (path.parent?.key === path.node) {
+        return
+      }
+
       const propertyName = getPropertyName(path)
       path.node.value = addVar({
         propertyName,
@@ -34,6 +40,10 @@ export function traverseVars({ t }) {
     },
     // eslint-disable-next-line @typescript-eslint/naming-convention
     TemplateElement(path) {
+      // don't replace vars if this is a key
+      if (path.parent?.key === path.node) {
+        return
+      }
       const propertyName = getPropertyName(path)
       path.node.value.raw = addVar({
         propertyName,
