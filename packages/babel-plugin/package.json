@@ -9,7 +9,8 @@
   "preconstruct": {
     "entrypoints": [
       "index.ts",
-      "macro/index.ts"
+      "macro/index.ts",
+      "runtime/index.ts"
     ]
   },
   "dependencies": {

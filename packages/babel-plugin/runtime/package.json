@@ -1,0 +1,4 @@
+{
+  "main": "dist/molehill-ui-babel-plugin-runtime.cjs.js",
+  "module": "dist/molehill-ui-babel-plugin-runtime.esm.js"
+}
