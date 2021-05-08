@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.4.2 (2021-05-08)
+
+
+### Bug Fixes
+
+* string keys gets replaced ([#33](https://github.com/molehill-ui/molehill-ui/issues/33)) ([7beffbf](https://github.com/molehill-ui/molehill-ui/commit/7beffbfdf74e6fc87088f5dba1035ad5ee0f6d1b))
+
+
+
+
+
 ## 0.4.1 (2021-05-07)
 
 **Note:** Version bump only for package @molehill-ui/postcss-plugin
