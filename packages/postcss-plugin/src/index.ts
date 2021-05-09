@@ -31,7 +31,16 @@ module.exports = () => {
   return {
     postcssPlugin: 'postcss-molehill',
     AtRule: {
-      import(atRule, { Rule, Declaration }) {
+      import(atRule) {
+        // change any @import 'molehill-ui*' to @molehill-ui 'molehill-ui*'
+        if (atRule.params.includes('molehill-ui')) {
+          atRule.name = 'molehill-ui'
+        }
+      },
+      'molehill-ui'(atRule, { Rule, Declaration }) {
+        // Note each file included here must have a corresponding
+        // file in molehill-ui. ie packages/molehill-ui/base
+        // to support postcss-import
         if (atRule.params.includes('molehill-ui/base')) {
           atRule.replaceWith(updateSource(styles, atRule.source))
         }
