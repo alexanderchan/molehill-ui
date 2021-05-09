@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.4.4 (2021-05-09)
+
+
+### Bug Fixes
+
+* support postcss import ([#32](https://github.com/molehill-ui/molehill-ui/issues/32)) ([3ca766f](https://github.com/molehill-ui/molehill-ui/commit/3ca766f8366036276790406b5c5766502c0e1834))
+
+
+
+
+
 ## 1.4.3 (2021-05-08)
 
 **Note:** Version bump only for package @molehill-ui/theme
