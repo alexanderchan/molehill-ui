@@ -63,7 +63,10 @@ export function traverseVars({ t }) {
     Property(path) {
       // handle object idenfier md: and '@media:md': string literal identifiers
       const replacementNames = getShortHandProperties({
-        property: path.node.key.name ?? path.node.key.value,
+        property:
+          path.node.key.name !== null && path.node.key.name !== undefined
+            ? path.node.key.name
+            : path.node.key.value,
       })
 
       if (replacementNames) {
