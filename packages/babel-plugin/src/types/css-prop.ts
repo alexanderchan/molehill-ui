@@ -23,13 +23,29 @@ interface AliasedCSSProperties {
   pl?: StandardCSSProperties['padding']
   px?: StandardCSSProperties['padding']
   py?: StandardCSSProperties['padding']
+  sm?: MoleHillUIExtendedCSSProperties
+  md?: MoleHillUIExtendedCSSProperties
+  lg?: MoleHillUIExtendedCSSProperties
+  xl?: MoleHillUIExtendedCSSProperties
 }
 
 interface OverwrittenCSSProperties {
-  fontWeight?: CSS.Property.FontWeight | 'extrabold'
+  boxShadow?: CSS.Property.BoxShadow | number
+  fontWeight?: CSS.Property.FontWeight | string
+  borderTopStyle?: CSS.Property.BorderTopStyle | string
+  borderBottomStyle?: CSS.Property.BorderTopStyle | string
+  borderRightStyle?: CSS.Property.BorderTopStyle | string
+  borderLeftStyle?: CSS.Property.BorderTopStyle | string
+  borderRadius?: CSS.Property.BorderRadius<string | number>
+  zIndex?: CSS.Property.ZIndex | string
 }
 
 export interface MoleHillUIExtendedCSSProperties
   extends Omit<CSSProperties, keyof OverwrittenCSSProperties>,
     AliasedCSSProperties,
-    OverwrittenCSSProperties {}
+    OverwrittenCSSProperties,
+    PseudoCSSProperties {}
+
+export type PseudoCSSProperties = {
+  [k in CSS.Pseudos]?: MoleHillUIExtendedCSSProperties
+}
