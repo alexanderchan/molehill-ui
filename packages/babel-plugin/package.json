@@ -21,6 +21,7 @@
     "@molehill-ui/theme": "^1.4.5",
     "babel-plugin-macros": "^3.0.1",
     "cosmiconfig": "^7.0.0",
+    "csstype": "^3.0.8",
     "just-clone": "^3.1.0"
   },
   "devDependencies": {
