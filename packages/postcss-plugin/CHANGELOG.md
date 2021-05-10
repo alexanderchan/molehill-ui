@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.4.6 (2021-05-10)
+
+**Note:** Version bump only for package @molehill-ui/postcss-plugin
+
+
+
+
+
 ## 0.4.5 (2021-05-09)
 
 **Note:** Version bump only for package @molehill-ui/postcss-plugin
