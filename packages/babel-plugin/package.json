@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/babel-plugin",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "description": "Babel plugin to add theme properties",
   "main": "dist/molehill-ui-babel-plugin.cjs.js",
   "module": "dist/molehill-ui-babel-plugin.esm.js",
@@ -18,7 +18,7 @@
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.16",
     "@babel/types": "^7.12.13",
-    "@molehill-ui/theme": "^1.4.9",
+    "@molehill-ui/theme": "^1.4.10",
     "babel-plugin-macros": "^3.0.1",
     "cosmiconfig": "^7.0.0",
     "csstype": "^3.0.8",
