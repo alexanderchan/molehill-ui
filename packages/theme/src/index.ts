@@ -40,10 +40,13 @@ export type {
   Scale,
 } from './theme.d'
 
+export { defaultConfig } from './defaultConfig'
+
+export * from './util/kebab-case'
+export * from './util/addVar'
 export type { Node } from './util/transform'
 export { transform } from './util/transform'
 export { getThemeVar } from './util/getThemeVar'
-export { defaultConfig } from './defaultConfig'
 export { getScaleForProperty } from './util/getScaleForProperty'
-export * from './util/kebab-case'
-export * from './util/addVar'
+export { convertThemeToScaleLookup } from './util/convertThemeToScaleLookup'
+export type { ScaleLookup } from './util/convertThemeToScaleLookup'

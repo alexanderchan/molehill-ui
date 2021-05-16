@@ -101,6 +101,7 @@ export interface Theme {
 type CssVars = Record<string, string | number>
 
 type InsertionMethod = 'append'
+// maybe export these all from util
 
 export type Config = {
   prefix?: string // The value css vars are prefixed with --mh-color-black
