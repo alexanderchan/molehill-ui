@@ -44,9 +44,17 @@ function convertFontSizesLineHeights({ fontSize }) {
 
 function negative({ spacing }) {
   return Object.fromEntries(
-    Object.entries(spacing).map(([key, value]) => {
-      return [`-${key}`, `-${value}`]
-    })
+    Object.entries(spacing)
+      .filter(([, value]) => {
+        // skip -0
+        if (value === `0px`) {
+          return false
+        }
+        return true
+      })
+      .map(([key, value]) => {
+        return [`-${key}`, `-${value}`]
+      })
   ) as any
 }
 

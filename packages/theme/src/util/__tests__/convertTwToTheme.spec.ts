@@ -185,7 +185,6 @@ it('should generate css vars from a theme', () => {
       "--shadow-none": "none",
       "--shadow-sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
       "--shadow-xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      "--space--0": "-0px",
       "--space--0-5": "-0.125rem",
       "--space--1": "-0.25rem",
       "--space--1-5": "-0.375rem",
@@ -486,7 +485,6 @@ it('should convert a theme', () => {
         "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       },
       "spaces": Object {
-        "-0": "-0px",
         "-0.5": "-0.125rem",
         "-1": "-0.25rem",
         "-1.5": "-0.375rem",
