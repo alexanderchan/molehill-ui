@@ -150,7 +150,6 @@ describe('postcss-plugin', () => {
       	--mh-space-1-5: 0.375rem;
       	--mh-space-2-5: 0.625rem;
       	--mh-space-3-5: 0.875rem;
-      	--mh-space--0: -0px;
       	--mh-space--1: -0.25rem;
       	--mh-space--2: -0.5rem;
       	--mh-space--3: -0.75rem;
