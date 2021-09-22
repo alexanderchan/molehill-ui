@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.6.1 (2021-09-22)
+
+**Note:** Version bump only for package @molehill-ui/theme
+
+
+
+
+
 ## 1.4.10 (2021-05-10)
 
 **Note:** Version bump only for package @molehill-ui/theme

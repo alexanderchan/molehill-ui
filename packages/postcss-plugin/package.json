@@ -1,6 +1,6 @@
 {
   "name": "@molehill-ui/postcss-plugin",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "PostCSS plugin for generating CSS",
   "main": "dist/molehill-ui-postcss-plugin.cjs.js",
   "module": "dist/molehill-ui-postcss-plugin.esm.js",
@@ -15,7 +15,7 @@
     "postcss": "^8.2.14"
   },
   "dependencies": {
-    "@molehill-ui/theme": "^1.6.0",
+    "@molehill-ui/theme": "^1.6.1",
     "cosmiconfig": "^7.0.0",
     "lodash": "^4.17.21",
     "modern-normalize": "^1.1.0"
